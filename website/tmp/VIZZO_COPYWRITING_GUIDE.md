@@ -2,7 +2,7 @@
 
 ### Document Purpose
 
-This document serves as the authoritative source of truth for creating website copy for vizzo.shop. Any AI agent or copywriter working on this project must internalize this information before generating any content. The goal is strategic, conversion-focused copy that feels human, premium, and trustworthy—not like typical AI-generated marketing content.
+This document serves as the authoritative source of truth for creating website copy for myvizzo.com. Any AI agent or copywriter working on this project must internalize this information before generating any content. The goal is strategic, conversion-focused copy that feels human, premium, and trustworthy—not like typical AI-generated marketing content.
 
 ---
 
@@ -36,7 +36,7 @@ In the old world, you needed good reviews to rank on page one. In the new world,
 This is why reviews matter more than ever—not less. Vizzo helps businesses capture the reviews they deserve, so they show up when AI assistants make recommendations.
 
 **The SaaS Component:**
-The device is only half the product. The dashboard (app.vizzo.shop) provides:
+The device is only half the product. The dashboard (app.myvizzo.com) provides:
 - Real-time review monitoring across platforms
 - Trend analysis (are reviews improving or declining?)
 - AI-generated response suggestions for negative reviews
@@ -198,7 +198,7 @@ The businesses that invest in review generation now will have an increasingly di
 ### 1.6 Website Architecture
 
 ```
-vizzo.shop (Marketing Site)
+myvizzo.com (Marketing Site)
 ├── / (Homepage)
 ├── /restaurants (Industry landing page)
 ├── /salons (Industry landing page)
@@ -215,7 +215,7 @@ vizzo.shop (Marketing Site)
 ├── /privacy
 └── /terms
 
-app.vizzo.shop (SaaS Dashboard)
+app.myvizzo.com (SaaS Dashboard)
 ├── /login
 ├── /signup
 ├── /dashboard
@@ -227,8 +227,8 @@ app.vizzo.shop (SaaS Dashboard)
 ```
 
 **Key Distinction:**
-- **vizzo.shop** = Attract, educate, convert. This is the public-facing brand. Optimized for SEO, designed for conversion.
-- **app.vizzo.shop** = Retain, serve, delight. This is the product. Optimized for usability, designed for daily use.
+- **myvizzo.com** = Attract, educate, convert. This is the public-facing brand. Optimized for SEO, designed for conversion.
+- **app.myvizzo.com** = Retain, serve, delight. This is the product. Optimized for usability, designed for daily use.
 
 The main website should never try to explain every dashboard feature. It should create desire to access the dashboard.
 

@@ -9,7 +9,7 @@ export const siteConfig = {
   tagline: 'Turn Happy Customers Into Reviewers',
   description:
     'Premium devices that turn happy customers into reviewers. Paired with a dashboard to track, analyze, and respond.',
-  url: 'https://vizzo.shop',
+  url: 'https://myvizzo.com',
 
   // Locale
   locale: 'en_US',
@@ -56,7 +56,7 @@ export const siteConfig = {
   // Organization / Authorship
   creator: 'Vizzo',
   publisher: 'Vizzo',
-  authors: [{ name: 'Vizzo', url: 'https://vizzo.shop' }],
+  authors: [{ name: 'Vizzo', url: 'https://myvizzo.com' }],
 
   // Theme
   themeColor: '#1C1917',
