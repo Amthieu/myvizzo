@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vizzo - Get More Google Reviews for Your Local Business</title>
+  <meta name="description" content="Premium devices that turn happy customers into reviewers. Paired with a dashboard to track, analyze, and respond.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vizzo - Turn Happy Customers Into Reviewers">
+  <meta property="og:description" content="Premium devices that turn happy customers into reviewers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vizzo.shop">
+  <meta property="og:image" content="https://vizzo.shop/og-image.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vizzo - Turn Happy Customers Into Reviewers">
+  <meta name="twitter:description" content="Premium devices that turn happy customers into reviewers.">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://vizzo.shop">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Colors */
+      --stone-950: #1C1917;
+      --stone-900: #292524;
+      --stone-800: #44403C;
+      --stone-700: #57534E;
+      --cream-50: #FAF9F7;
+      --cream-100: #F5F4F0;
+      --cream-200: #E8E6E1;
+      --warm-400: #A39E93;
+      --amber-400: #F59E0B;
+      --amber-500: #D97706;
+      --amber-600: #B45309;
+      --success: #059669;
+      --error: #DC2626;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: var(--cream-50);
+      color: var(--stone-950);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Typography */
+    .text-display-xl {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      font-weight: 800;
+    }
+    
+    .text-display-md {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+    
+    .text-heading-xl {
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+    
+    .text-heading-sm {
+      font-size: 1.25rem;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      font-weight: 600;
+    }
+    
+    .text-body-lg {
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+    
+    .text-body-md {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    .text-body-sm {
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+    
+    .text-caption {
+      font-size: 0.75rem;
+      line-height: 1.4;
+      letter-spacing: 0.01em;
+    }
+    
+    /* Layout */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container { padding: 0 2rem; }
+    }
+    
+    @media (min-width: 1024px) {
+      .container { padding: 0 4rem; }
+    }
+    
+    .container-sm { max-width: 640px; }
+    .container-md { max-width: 768px; }
+    .container-lg { max-width: 1024px; }
+    
+    /* Sections */
+    .section-standard { padding: 4rem 0; }
+    .section-spacious { padding: 5rem 0; }
+    
+    @media (min-width: 1024px) {
+      .section-standard { padding: 6rem 0; }
+      .section-spacious { padding: 8rem 0; }
+    }
+    
+    .bg-dark { background-color: var(--stone-950); color: var(--cream-50); }
+    .bg-cream { background-color: var(--cream-100); }
+    .bg-white { background-color: white; }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 0;
+      background: rgba(28, 25, 23, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--cream-50);
+    }
+    
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .logo-dot {
+      color: var(--amber-500);
+    }
+    
+    nav {
+      display: none;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      nav { display: flex; }
+    }
+    
+    nav a {
+      color: var(--cream-200);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    
+    nav a:hover { color: var(--cream-50); }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    
+    .btn-primary {
+      background: var(--amber-500);
+      color: var(--stone-950);
+    }
+    
+    .btn-primary:hover {
+      background: var(--amber-400);
+      transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--cream-50);
+      border: 1px solid var(--cream-200);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .btn-lg {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+    
+    .btn-link {
+      background: none;
+      border: none;
+      color: var(--amber-500);
+      font-weight: 600;
+      padding: 0;
+      cursor: pointer;
+    }
+    
+    .btn-link:hover {
+      text-decoration: underline;
+    }
+    
+    /* Hero */
+    .hero {
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    @media (min-width: 1024px) {
+      .hero { padding-top: 10rem; padding-bottom: 7rem; }
+    }
+    
+    .hero-grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(250, 249, 247, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(250, 249, 247, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    
+    .hero-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(217, 119, 6, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(217, 119, 6, 0.15);
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--amber-400);
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero h1 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero-tagline {
+      color: var(--amber-500);
+      font-weight: 600;
+      font-style: italic;
+      display: block;
+      margin-top: 0.5rem;
+    }
+    
+    .hero-subheadline {
+      font-size: 1.125rem;
+      color: var(--cream-200);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    @media (min-width: 640px) {
+      .hero-ctas {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--cream-200);
+    }
+    
+    @media (min-width: 768px) {
+      .card { padding: 2rem; }
+    }
+    
+    .card-elevated {
+      border: none;
+      box-shadow: 0 4px 16px rgba(28, 25, 23, 0.08);
+    }
+    
+    .card-cream {
+      background: var(--cream-100);
+      border: none;
+    }
+    
+    /* Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    @media (min-width: 640px) {
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (min-width: 1024px) {
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    }
+    
+    /* Section headers */
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+    
+    .section-header .badge {
+      background: rgba(217, 119, 6, 0.1);
+      color: var(--amber-600);
+    }
+    
+    .section-header h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      color: var(--stone-700);
+      font-size: 1.125rem;
+    }
+    
+    .section-header.dark .badge {
+      background: rgba(217, 119, 6, 0.15);
+      color: var(--amber-400);
+    }
+    
+    .section-header.dark p {
+      color: var(--cream-200);
+    }
+    
+    /* Silent Majority Section - The Gap Visual */
+    .silent-majority-visual {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .gap-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid var(--cream-200);
+      display: inline-block;
+    }
+    
+    .gap-stat {
+      margin-bottom: 1.5rem;
+    }
+    
+    .gap-number {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--amber-500);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.25rem;
+    }
+    
+    @media (max-width: 640px) {
+      .gap-number { font-size: 4rem; }
+    }
+    
+    .gap-label {
+      font-size: 1.125rem;
+      color: var(--stone-700);
+      font-weight: 500;
+    }
+    
+    .nowrap {
+      white-space: nowrap;
+    }
+    
+    .gap-dots {
+      margin-bottom: 1.25rem;
+    }
+    
+    .dots-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+      width: 314px; /* 20 dots * 10px + 19 gaps * 6px */
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 400px) {
+      .dots-grid {
+        gap: 4px;
+        width: 236px; /* 20 dots * 8px + 19 gaps * 4px */
+      }
+      .dot {
+        width: 8px !important;
+        height: 8px !important;
+      }
+      .gap-card {
+        padding: 1.5rem 1.25rem 1.25rem;
+      }
+    }
+    
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    
+    .dot-silent {
+      background-color: var(--cream-200);
+    }
+    
+    .dot-active {
+      background-color: var(--amber-500);
+      box-shadow: 0 0 8px rgba(217, 119, 6, 0.4);
+    }
+    
+    .dots-legend {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--stone-600);
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+    
+    .legend-item .dot {
+      width: 8px;
+      height: 8px;
+    }
+    
+    .gap-contrast {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    
+    .gap-aside {
+      font-size: 1rem;
+      color: var(--stone-600);
+      margin-bottom: 1rem;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 540px) {
+      .gap-aside {
+        white-space: normal;
+      }
+    }
+    
+    .gap-result {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--stone-950);
+      background: linear-gradient(135deg, rgba(217, 119, 6, 0.1), rgba(217, 119, 6, 0.05));
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      border-left: 4px solid var(--amber-500);
+    }
+    
+    @media (max-width: 480px) {
+      .gap-result {
+        font-size: 1rem;
+        padding: 0.875rem 1rem;
+      }
+    }
+    
+    /* AI Section */
+    .ai-section-intro {
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    
+    .ai-section-intro p {
+      font-size: 1.125rem;
+      color: var(--stone-700);
+    }
+    
+    .ai-section-intro em {
+      font-style: italic;
+      color: var(--stone-800);
+    }
+    
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    
+    @media (min-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    .comparison-card {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .comparison-header {
+      padding: 1rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .comparison-old .comparison-header {
+      background: var(--cream-200);
+      color: var(--stone-700);
+    }
+    
+    .comparison-new .comparison-header {
+      background: rgba(217, 119, 6, 0.15);
+      color: var(--amber-600);
+    }
+    
+    .comparison-body {
+      padding: 1.5rem;
+      background: white;
+      border: 1px solid var(--cream-200);
+      border-top: none;
+      border-radius: 0 0 12px 12px;
+    }
+    
+    .comparison-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--cream-200);
+    }
+    
+    .comparison-logo svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .comparison-logo span {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--stone-700);
+    }
+    
+    .search-results {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .search-result {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: var(--cream-50);
+      border-radius: 6px;
+      font-size: 0.875rem;
+    }
+    
+    .search-result.faded {
+      opacity: 0.5;
+    }
+    
+    .search-result-icon {
+      width: 16px;
+      height: 16px;
+      color: var(--warm-400);
+    }
+    
+    .search-result-stars {
+      color: var(--amber-500);
+      font-size: 0.75rem;
+    }
+    
+    .search-result-count {
+      color: var(--warm-400);
+      font-size: 0.75rem;
+    }
+    
+    .ai-response {
+      font-size: 0.9rem;
+      color: var(--stone-700);
+      line-height: 1.6;
+    }
+    
+    .ai-response p {
+      margin-bottom: 1rem;
+    }
+    
+    .ai-recommendation {
+      background: var(--cream-50);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .ai-recommendation.highlighted {
+      background: rgba(217, 119, 6, 0.1);
+      border: 1px solid var(--amber-500);
+    }
+    
+    .ai-recommendation-name {
+      font-weight: 600;
+      color: var(--stone-950);
+    }
+    
+    .ai-recommendation-meta {
+      font-size: 0.8rem;
+      color: var(--stone-700);
+      margin-top: 0.25rem;
+    }
+    
+    .comparison-footer {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--cream-200);
+      font-size: 0.8rem;
+      color: var(--stone-700);
+      text-align: center;
+    }
+    
+    /* Solution Section */
+    .solution-cards {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 900px) {
+      .solution-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+    
+    .solution-card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--cream-200);
+    }
+    
+    .solution-card-device {
+      background: var(--stone-950);
+      color: var(--cream-50);
+      border: none;
+    }
+    
+    .solution-card-header {
+      padding: 1.5rem 2rem 0;
+    }
+    
+    .solution-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 2rem;
+      background: rgba(217, 119, 6, 0.15);
+      color: var(--amber-500);
+      margin-bottom: 0.75rem;
+    }
+    
+    .solution-card-header h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    
+    .solution-card-body {
+      padding: 1.25rem 2rem 2rem;
+    }
+    
+    .solution-intro {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.85;
+      margin-bottom: 1.5rem;
+    }
+    
+    .solution-card-device .solution-intro {
+      color: var(--cream-100);
+    }
+    
+    /* Device Preview */
+    .device-preview {
+      background: var(--stone-900);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .device-screen {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+    
+    .device-rating {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--amber-500);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    
+    .device-stars {
+      color: var(--amber-500);
+      font-size: 1.25rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+    
+    .device-copy {
+      font-size: 0.875rem;
+      color: var(--cream-100);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    
+    .device-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .device-action {
+      width: 36px;
+      height: 36px;
+      background: white;
+      border-radius: 0.375rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .device-action svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--stone-800);
+    }
+    
+    .device-actions span {
+      font-size: 0.75rem;
+      color: var(--cream-200);
+      margin-left: 0.25rem;
+    }
+    
+    /* Device Features */
+    .solution-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .solution-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.875rem;
+    }
+    
+    .feature-icon {
+      width: 2rem;
+      height: 2rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .feature-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke: var(--amber-500);
+    }
+    
+    .feature-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+    
+    .feature-text strong {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--cream-50);
+    }
+    
+    .feature-text span {
+      font-size: 0.8rem;
+      color: var(--cream-200);
+      line-height: 1.4;
+    }
+    
+    /* Dashboard Features */
+    .dashboard-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    
+    .dashboard-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .dashboard-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(217, 119, 6, 0.1);
+      border-radius: 0.5rem;
+    }
+    
+    .dashboard-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke: var(--amber-500);
+    }
+    
+    .dashboard-feature strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--stone-950);
+      margin-bottom: 0.125rem;
+    }
+    
+    .dashboard-feature p {
+      font-size: 0.85rem;
+      color: var(--stone-700);
+      line-height: 1.4;
+      margin: 0;
+    }
+    
+    @media (max-width: 480px) {
+      .solution-card-header {
+        padding: 1.25rem 1.25rem 0;
+      }
+      .solution-card-body {
+        padding: 1rem 1.25rem 1.5rem;
+      }
+      .solution-card-header h3 {
+        font-size: 1.5rem;
+      }
+      .device-preview {
+        padding: 1rem;
+      }
+      .device-rating {
+        font-size: 3rem;
+      }
+    }
+    
+    /* How It Works */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 1024px) {
+      .steps-container {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+    }
+    
+    .step {
+      flex: 1;
+      position: relative;
+    }
+    
+    @media (min-width: 1024px) {
+      .step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 24px;
+        right: -0.75rem;
+        width: 1.5rem;
+        height: 2px;
+        background: linear-gradient(90deg, var(--amber-500), var(--cream-200));
+      }
+    }
+    
+    /* Mobile: vertical line on left */
+    @media (max-width: 1023px) {
+      .step {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 1rem;
+        padding-left: 0;
+      }
+      
+      .step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 24px;
+        top: 48px;
+        width: 2px;
+        height: calc(100% + 2rem - 48px);
+        background: linear-gradient(180deg, var(--amber-500), var(--cream-200));
+      }
+    }
+    
+    .step-number {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--amber-400), var(--amber-600));
+      border-radius: 50%;
+      color: white;
+      font-weight: 700;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (min-width: 1024px) {
+      .step-number {
+        margin: 0 auto 1.25rem;
+      }
+    }
+    
+    .step-content {
+      text-align: left;
+    }
+    
+    @media (min-width: 1024px) {
+      .step-content {
+        text-align: center;
+      }
+    }
+    
+    .step-content h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .step-content p {
+      font-size: 0.9rem;
+      color: var(--stone-700);
+    }
+    
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 768px) {
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    .benefit-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      text-align: left;
+    }
+    
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 2.75rem;
+      height: 2.75rem;
+      background-color: rgba(217, 119, 6, 0.1);
+      border-radius: 0.625rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--amber-500);
+    }
+    
+    .benefit-content {
+      flex: 1;
+    }
+    
+    .benefit-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.375rem;
+    }
+    
+    .benefit-body {
+      font-size: 0.9375rem;
+      color: var(--stone-700);
+    }
+    
+    /* ROI Section */
+    .roi-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .roi-content h2 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .roi-text {
+      font-size: 1.125rem;
+      color: var(--stone-700);
+      margin-bottom: 2rem;
+    }
+    
+    .roi-comparison {
+      background: var(--cream-50);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: left;
+    }
+    
+    .roi-comparison p {
+      color: var(--stone-700);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    .roi-comparison strong {
+      color: var(--stone-950);
+    }
+    
+    .text-link {
+      color: var(--amber-500);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .text-link:hover {
+      text-decoration: underline;
+    }
+    
+    /* ROI Section */
+    .roi-grid {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+    
+    .roi-chain {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .roi-chain {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+    }
+    
+    .roi-chain-step {
+      background: var(--cream-100);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      flex: 1;
+    }
+    
+    .roi-chain-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--amber-500);
+      margin-bottom: 0.5rem;
+    }
+    
+    .roi-chain-text {
+      font-size: 0.9rem;
+      color: var(--stone-700);
+    }
+    
+    .roi-chain-text strong {
+      color: var(--stone-950);
+    }
+    
+    .roi-chain-arrow {
+      display: none;
+      font-size: 1.5rem;
+      color: var(--warm-400);
+    }
+    
+    @media (min-width: 768px) {
+      .roi-chain-arrow {
+        display: block;
+      }
+    }
+    
+    .roi-example {
+      background: white;
+      border: 1px solid var(--cream-200);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+    
+    .roi-example h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--stone-950);
+    }
+    
+    .roi-example-content p {
+      font-size: 0.95rem;
+      color: var(--stone-700);
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+    
+    .roi-example-content strong {
+      color: var(--stone-950);
+    }
+    
+    .roi-result {
+      background: rgba(217, 119, 6, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem !important;
+      color: var(--stone-950) !important;
+    }
+    
+    .roi-compare {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .roi-compare-title {
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--stone-700);
+    }
+    
+    .roi-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .roi-compare-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .roi-compare-item {
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .roi-compare-bad {
+      background: var(--cream-100);
+    }
+    
+    .roi-compare-good {
+      background: rgba(217, 119, 6, 0.1);
+      border: 1px solid var(--amber-500);
+    }
+    
+    .roi-compare-label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .roi-compare-desc {
+      font-size: 0.75rem;
+      color: var(--stone-700);
+    }
+    
+    .roi-compare-good .roi-compare-desc {
+      color: var(--amber-600);
+    }
+    
+    /* Stats Section */
+    .stats-intro {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    
+    .stats-intro p {
+      font-size: 1rem;
+      color: var(--stone-700);
+    }
+    
+    /* Stats Section - Reviews Aren't Optional */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .stat-card-large {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid var(--cream-200);
+    }
+    
+    .stat-value-large {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--amber-500);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    
+    .stat-label-large {
+      font-size: 0.9rem;
+      color: var(--stone-700);
+      line-height: 1.4;
+    }
+    
+    .stat-card-highlight {
+      background: linear-gradient(135deg, rgba(217, 119, 6, 0.08), rgba(217, 119, 6, 0.03));
+      border: 1px solid rgba(217, 119, 6, 0.2);
+    }
+    
+    .stat-label-top {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--amber-600);
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Industries */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 1024px) {
+      .industries-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    
+    .industry-card {
+      text-align: center;
+      cursor: pointer;
+      padding: 2rem 1.5rem;
+      text-decoration: none;
+    }
+    
+    .industry-icon {
+      width: 4.5rem;
+      height: 4.5rem;
+      background-color: var(--cream-100);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .industry-icon svg {
+      color: var(--stone-700);
+      transition: color 0.15s;
+    }
+    
+    .industry-card:hover .industry-icon {
+      background-color: var(--amber-500);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 24px rgba(217, 119, 6, 0.3);
+    }
+    
+    .industry-card:hover .industry-icon svg {
+      color: var(--stone-950);
+    }
+    
+    .industry-name {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--stone-950);
+    }
+    
+    .industry-sub {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--warm-400);
+      margin-bottom: 0.5rem;
+    }
+    
+    .industry-cta {
+      font-size: 0.875rem;
+      color: var(--amber-500);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-weight: 500;
+    }
+    
+    .industry-cta svg {
+      width: 1rem;
+      height: 1rem;
+      transition: transform 0.15s;
+    }
+    
+    .industry-card:hover .industry-cta svg {
+      transform: translateX(4px);
+    }
+    
+    /* And more card - dashed border style */
+    .industry-more {
+      background: var(--cream-50);
+      border: 2px dashed var(--cream-200);
+    }
+    
+    .industry-more:hover {
+      border-color: var(--amber-500);
+      background: rgba(217, 119, 6, 0.03);
+    }
+    
+    .industry-icon-more {
+      background: transparent;
+    }
+    
+    .industry-more:hover .industry-icon-more {
+      background: transparent;
+      box-shadow: none;
+      transform: none;
+    }
+    
+    /* Compliance */
+    .compliance-section {
+      padding: 2rem 0;
+    }
+    
+    .compliance-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+    
+    @media (min-width: 768px) {
+      .compliance-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 1.5rem;
+      }
+    }
+    
+    .compliance-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 150, 105, 0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    .compliance-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--success);
+    }
+    
+    .compliance-text h3 {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    
+    .compliance-text p {
+      font-size: 0.9rem;
+      color: var(--stone-700);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 5rem 0;
+    }
+    
+    @media (min-width: 1024px) {
+      .cta-section { padding: 7rem 0; }
+    }
+    
+    .cta-content {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .cta-content h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .cta-content p {
+      color: var(--cream-200);
+      margin-bottom: 2rem;
+    }
+    
+    .email-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 640px) {
+      .email-form {
+        flex-direction: row;
+      }
+    }
+    
+    .email-input {
+      flex: 1;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--stone-800);
+      background: var(--stone-900);
+      color: var(--cream-50);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    
+    .email-input::placeholder {
+      color: var(--warm-400);
+    }
+    
+    .email-input:focus {
+      outline: none;
+      border-color: var(--amber-500);
+    }
+    
+    .email-hint {
+      font-size: 0.8rem;
+      color: var(--warm-400);
+      margin-top: 0.5rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--stone-900);
+      color: var(--cream-200);
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr repeat(4, 1fr);
+        gap: 3rem;
+      }
+    }
+    
+    .footer-brand {
+      grid-column: span 2;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-brand { grid-column: span 1; }
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      color: var(--cream-50);
+      text-decoration: none;
+    }
+    
+    .footer-logo span {
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+    
+    .footer-tagline {
+      font-size: 0.875rem;
+      color: var(--warm-400);
+      max-width: 250px;
+    }
+    
+    .footer-column h4 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--warm-400);
+      margin-bottom: 1rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .footer-column a {
+      color: var(--cream-200);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.15s;
+    }
+    
+    .footer-column a:hover {
+      color: var(--cream-50);
+    }
+    
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--stone-800);
+      align-items: center;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: var(--warm-400);
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--stone-800);
+      border-radius: 8px;
+      color: var(--cream-200);
+      transition: all 0.15s;
+    }
+    
+    .footer-social a:hover {
+      background: var(--amber-500);
+      color: var(--stone-950);
+    }
+    
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <a href="/" class="logo">
+      <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="4" r="4" fill="#D97706"/>
+        <path d="M8 28L16 8L24 28H8Z" fill="currentColor"/>
+      </svg>
+      <span class="logo-text">v<span class="logo-dot">i</span>zzo</span>
+    </a>
+    <nav>
+      <a href="/#industries">Industries</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+    </nav>
+    <a href="#waitlist" class="btn btn-primary">Join Waitlist</a>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero bg-dark">
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="badge">For local businesses</div>
+      <h1 class="text-display-xl">
+        Your happy customers leave without a review.
+        <span class="hero-tagline">Vizzo changes that.</span>
+      </h1>
+      <p class="hero-subheadline">
+        Premium devices designed to blend into your space and prompt reviews at the moment of satisfaction. Paired with a dashboard to track, analyze, and respond.
+      </p>
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary btn-lg">Join the Waitlist</a>
+        <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Silent Majority Section -->
+<section class="section-standard bg-cream">
+  <div class="container container-md">
+    <div class="section-header">
+      <div class="badge">The problem</div>
+      <h2 class="text-display-md">The silent majority</h2>
+      <p>Your happy customers loved the experience. They just didn't tell anyone. By the time they walk out, the moment has passed.</p>
+    </div>
+    
+    <!-- The Gap Visual -->
+    <div class="silent-majority-visual">
+      <div class="gap-card">
+        <div class="gap-stat">
+          <div class="gap-number">98%</div>
+          <div class="gap-label">of satisfied customers leave <span class="nowrap">without reviewing</span></div>
+        </div>
+        
+        <div class="gap-dots">
+          <!-- 100 dots: 98 silent, 2 active - 5 rows of 20 -->
+          <div class="dots-grid">
+            <span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span>
+            <span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span>
+            <span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span>
+            <span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span>
+            <span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-silent"></span><span class="dot dot-active"></span><span class="dot dot-active"></span>
+          </div>
+        </div>
+        
+        <div class="dots-legend">
+          <span class="legend-item"><span class="dot dot-silent"></span> Silent</span>
+          <span class="legend-item"><span class="dot dot-active"></span> Left a review</span>
+        </div>
+      </div>
+      
+      <div class="gap-contrast">
+        <p class="gap-aside">Meanwhile, unhappy customers almost always find time to complain.</p>
+        <p class="gap-result">Your reviews don't reflect your reality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Reality Section -->
+<section class="section-standard bg-white">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">The new reality</div>
+      <h2 class="text-display-md">AI is changing how customers find you</h2>
+    </div>
+    <div class="ai-section-intro">
+      <p>
+        When someone asks an AI for <em>the best Italian restaurant nearby</em>, it doesn't show a page of results. It recommends a few options based on reviews. If your review profile isn't strong, you're not in the conversation.
+      </p>
+    </div>
+    <div class="comparison-grid">
+      <!-- Old Way -->
+      <div class="comparison-card comparison-old">
+        <div class="comparison-header">Yesterday's Search</div>
+        <div class="comparison-body">
+          <div class="comparison-logo">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <span>Google Search</span>
+          </div>
+          <div class="search-results">
+            <div class="search-result">
+              <span>🔗</span>
+              <span>Mario's Italian</span>
+              <span class="search-result-stars">⭐ 4.3</span>
+              <span class="search-result-count">(89)</span>
+            </div>
+            <div class="search-result">
+              <span>🔗</span>
+              <span>Lucia's Kitchen</span>
+              <span class="search-result-stars">⭐ 4.5</span>
+              <span class="search-result-count">(156)</span>
+            </div>
+            <div class="search-result">
+              <span>🔗</span>
+              <span>Roma Trattoria</span>
+              <span class="search-result-stars">⭐ 4.1</span>
+              <span class="search-result-count">(203)</span>
+            </div>
+            <div class="search-result faded">
+              <span>🔗</span>
+              <span>Pasta House</span>
+              <span class="search-result-stars">⭐ 4.7</span>
+              <span class="search-result-count">(67)</span>
+            </div>
+            <div class="search-result faded">
+              <span>🔗</span>
+              <span>Bella Napoli</span>
+              <span class="search-result-stars">⭐ 4.4</span>
+              <span class="search-result-count">(178)</span>
+            </div>
+          </div>
+          <div class="comparison-footer">
+            Users scroll, compare, and choose
+          </div>
+        </div>
+      </div>
+      
+      <!-- New Way -->
+      <div class="comparison-card comparison-new">
+        <div class="comparison-header">Today's Search</div>
+        <div class="comparison-body">
+          <div class="comparison-logo">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.4048-.6813zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997z" fill="#10a37f"/>
+            </svg>
+            <span>ChatGPT</span>
+          </div>
+          <div class="ai-response">
+            <p>Based on local reviews and ratings, here are some great Italian restaurants near you:</p>
+            <div class="ai-recommendation highlighted">
+              <div class="ai-recommendation-name">Your Business</div>
+              <div class="ai-recommendation-meta">Highly rated with consistent positive feedback about authentic cuisine and excellent service.</div>
+            </div>
+            <div class="ai-recommendation">
+              <div class="ai-recommendation-name">Lucia's Kitchen</div>
+              <div class="ai-recommendation-meta">Known for homemade pasta and a cozy atmosphere.</div>
+            </div>
+          </div>
+          <div class="comparison-footer">
+            AI recommends based on review signals
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution Section -->
+<section class="section-standard bg-cream" id="solution">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">The solution</div>
+      <h2 class="text-display-md">Capture reviews at the perfect moment</h2>
+      <p>Satisfied customers rarely go home and leave a review. But while they're still in your space, enjoying that post-meal glow or admiring their fresh haircut, a well-placed prompt turns satisfaction into action.</p>
+    </div>
+    
+    <div class="solution-cards">
+      <!-- Device Card - The Hero -->
+      <div class="solution-card solution-card-device">
+        <div class="solution-card-header">
+          <span class="solution-label">Hardware</span>
+          <h3>A review-generating device</h3>
+        </div>
+        
+        <div class="solution-card-body">
+          <p class="solution-intro">
+            Vizzo sits at your counter, register, or waiting area. Wherever satisfaction peaks. Multiple form factors designed to fit naturally into different business environments. Not a screen bolted onto your space, but a device that belongs there. It displays your live Google rating alongside messaging designed to inspire action.
+          </p>
+          
+          <!-- Device Preview -->
+          <div class="device-preview">
+            <div class="device-screen">
+              <div class="device-rating">4.9</div>
+              <div class="device-stars">★★★★★</div>
+              <div class="device-copy">Loved your visit? Join 847 customers who shared their experience.</div>
+              <div class="device-actions">
+                <div class="device-action">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 11h2v2H3v-2zm0-4h2v2H3V7zm0 8h2v2H3v-2zm4-4h2v2H7v-2zm0-4h2v2H7V7zm0 8h2v2H7v-2zm4-4h2v2h-2v-2zm0-4h2v2h-2V7zm0 8h2v2h-2v-2zm4 0h2v2h-2v-2zm0-4h2v2h-2v-2zm0-4h2v2h-2V7zm4 8h2v2h-2v-2zm0-4h2v2h-2v-2zm0-4h2v2h-2V7zM3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5z"/>
+                  </svg>
+                </div>
+                <div class="device-action">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16zM8 6h3v3H8V6zm0 4.5h3v3H8v-3zm0 4.5h3v3H8v-3zm4.5-9H16v3h-3.5V6zm0 4.5H16v3h-3.5v-3zm0 4.5H16v3h-3.5v-3z"/>
+                  </svg>
+                </div>
+                <span>Scan or tap to review</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="solution-features">
+            <div class="solution-feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Perfect timing</strong>
+                <span>Prompts customers at peak satisfaction, before they walk out and forget</span>
+              </div>
+            </div>
+            
+            <div class="solution-feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Social proof that converts</strong>
+                <span>Seeing your strong rating makes customers want to add their voice</span>
+              </div>
+            </div>
+            
+            <div class="solution-feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Fully customizable</strong>
+                <span>Adapt the display to your brand tone. Hide ratings during recovery periods. You control the message.</span>
+              </div>
+            </div>
+            
+            <div class="solution-feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Copy that converts</strong>
+                <span>No "Please review us!" here. Messaging that makes action feel natural.</span>
+              </div>
+            </div>
+            
+            <div class="solution-feature">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 20V10"/>
+                  <path d="M12 20V4"/>
+                  <path d="M6 20v-6"/>
+                </svg>
+              </div>
+              <div class="feature-text">
+                <strong>Works 24/7</strong>
+                <span>No scripts for staff, no follow-up emails. Just continuous results.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Dashboard Card -->
+      <div class="solution-card solution-card-dashboard">
+        <div class="solution-card-header">
+          <span class="solution-label">Software</span>
+          <h3>Your reputation, managed</h3>
+        </div>
+        
+        <div class="solution-card-body">
+          <p class="solution-intro">
+            The device generates reviews. The dashboard helps you manage them, respond faster, and stay ahead of problems.
+          </p>
+          
+          <div class="dashboard-features">
+            <div class="dashboard-feature">
+              <div class="dashboard-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Instant alerts</strong>
+                <p>Know the moment a new review comes in, good or bad</p>
+              </div>
+            </div>
+            
+            <div class="dashboard-feature">
+              <div class="dashboard-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 20h9"/>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Suggested responses</strong>
+                <p>Professional reply drafts you can send in seconds</p>
+              </div>
+            </div>
+            
+            <div class="dashboard-feature">
+              <div class="dashboard-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 3v18h18"/>
+                  <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Trend analysis</strong>
+                <p>See if ratings are climbing or slipping before it's too late</p>
+              </div>
+            </div>
+            
+            <div class="dashboard-feature">
+              <div class="dashboard-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Competitive insights</strong>
+                <p>See how you stack up against nearby businesses</p>
+              </div>
+            </div>
+            
+            <div class="dashboard-feature">
+              <div class="dashboard-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 0 1 9-9"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Always current</strong>
+                <p>Automatic updates, Google TOS compliance, and new features included</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="section-standard bg-white" id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">How it works</div>
+      <h2 class="text-display-md">Simple setup. Continuous results.</h2>
+      <p>Vizzo works 24/7. No scripts for your staff. No follow-up emails to send. Just happy customers and more reviews.</p>
+    </div>
+    <div class="steps-container" style="max-width: 1000px; margin: 0 auto;">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Set up your device</h3>
+          <p>Position Vizzo where customers naturally pause. At checkout, by the door, or wherever satisfaction peaks.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Capture the moment</h3>
+          <p>When customers are happy, they see Vizzo. Thoughtfully designed prompts encourage them to share, no hard sell required.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Review in seconds</h3>
+          <p>A quick QR scan or NFC tap takes them straight to your Google review page. No friction, no apps, no accounts to create.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Monitor and respond</h3>
+          <p>Track new reviews from the dashboard. Get alerts. See trends. Respond quickly with suggested replies.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Get discovered</h3>
+          <p>More reviews mean better visibility. When AI assistants recommend local businesses, strong review profiles rise to the top.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="section-standard bg-cream">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="text-display-md">Why businesses choose Vizzo</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="card card-elevated benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">More reviews from happy customers</h3>
+          <p class="benefit-body">Your satisfied customers become your advocates. Vizzo prompts them at the moment they're most likely to share, not hours later via email.</p>
+        </div>
+      </div>
+      
+      <div class="card card-elevated benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">Generate momentum</h3>
+          <p class="benefit-body">Reviews compound. More reviews lead to better visibility, which leads to more customers, which leads to more reviews. Vizzo helps you start the flywheel.</p>
+        </div>
+      </div>
+      
+      <div class="card card-elevated benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">Show you're listening</h3>
+          <p class="benefit-body">Customers see a business that cares about feedback. Whether you're maintaining a 4.8 or rebuilding from a rough patch, Vizzo signals commitment to your customers.</p>
+        </div>
+      </div>
+      
+      <div class="card card-elevated benefit-card">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="benefit-content">
+          <h3 class="benefit-title">Works in the background</h3>
+          <p class="benefit-body">No scripts for staff to memorize. No email sequences to manage. Vizzo works automatically while you focus on what you do best.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI Section -->
+<section class="section-standard bg-white">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">The math</div>
+      <h2 class="text-display-md">Reviews drive visibility. Visibility drives customers.</h2>
+    </div>
+    
+    <div class="roi-grid">
+      <!-- The Chain -->
+      <div class="roi-chain">
+        <div class="roi-chain-step">
+          <div class="roi-chain-number">3-5×</div>
+          <div class="roi-chain-text"><strong>more reviews</strong> with in-store prompting vs. no prompting</div>
+        </div>
+        <div class="roi-chain-arrow">→</div>
+        <div class="roi-chain-step">
+          <div class="roi-chain-number">+0.1★</div>
+          <div class="roi-chain-text">rating improvement = <strong>25% more conversions</strong></div>
+        </div>
+        <div class="roi-chain-arrow">→</div>
+        <div class="roi-chain-step">
+          <div class="roi-chain-number">∞</div>
+          <div class="roi-chain-text">reviews <strong>compound forever</strong>, unlike ads that disappear</div>
+        </div>
+      </div>
+      
+      <!-- The Example -->
+      <div class="roi-example">
+        <h3>The payback math</h3>
+        <div class="roi-example-content">
+          <p>Without prompting, only 1-2% of happy customers leave reviews. With Vizzo, that jumps to 5-8%. That's <strong>3-5× more reviews</strong> than you'd get otherwise.</p>
+          <p>More reviews means better visibility. Better visibility means more customers finding you instead of your competitors.</p>
+          <p class="roi-result">One device. <strong>Pays for itself in weeks.</strong> Keeps working for years.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Comparison -->
+    <div class="roi-compare">
+      <p class="roi-compare-title">Compare that to what you're already spending:</p>
+      <div class="roi-compare-grid">
+        <div class="roi-compare-item roi-compare-bad">
+          <span class="roi-compare-label">Monthly ads</span>
+          <span class="roi-compare-desc">Disappear when you stop paying</span>
+        </div>
+        <div class="roi-compare-item roi-compare-bad">
+          <span class="roi-compare-label">Email tools</span>
+          <span class="roi-compare-desc">$20-50/month, low open rates</span>
+        </div>
+        <div class="roi-compare-item roi-compare-bad">
+          <span class="roi-compare-label">Staff time</span>
+          <span class="roi-compare-desc">Inconsistent, awkward, forgotten</span>
+        </div>
+        <div class="roi-compare-item roi-compare-good">
+          <span class="roi-compare-label">Vizzo</span>
+          <span class="roi-compare-desc">One-time investment that compounds</span>
+        </div>
+      </div>
+    </div>
+    
+    <p style="text-align: center; margin-top: 2rem;">
+      <a href="#waitlist" class="text-link">Join the waitlist →</a>
+    </p>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section-standard bg-cream">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="text-display-md">Reviews aren't optional anymore</h2>
+    </div>
+    <div class="stats-intro">
+      <p>Your competitors are getting reviews while you're not. Every day without a review strategy is a day they pull ahead. The businesses that invest now will have an increasingly difficult-to-close lead over those who wait.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card-large">
+        <div class="stat-value-large">721%</div>
+        <div class="stat-label-large">Growth in AI search platform traffic, year over year</div>
+      </div>
+      <div class="stat-card-large">
+        <div class="stat-value-large">93%</div>
+        <div class="stat-label-large">of consumers read reviews before visiting a local business</div>
+      </div>
+      <div class="stat-card-large stat-card-highlight">
+        <div class="stat-label-top">The #1 signal</div>
+        <div class="stat-value-large" style="font-size: 1.75rem; color: var(--stone-950);">Reviews</div>
+        <div class="stat-label-large">AI uses to make local business recommendations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries Section -->
+<section class="section-standard bg-white" id="industries">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="text-display-md">Built for local businesses</h2>
+      <p style="color: var(--stone-700); margin-top: 0.5rem;">Reviews drive trust. Trust drives revenue. Vizzo drives reviews.</p>
+    </div>
+    <div class="industries-grid">
+      <a href="/restaurants" class="card card-interactive industry-card">
+        <div class="industry-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+          </svg>
+        </div>
+        <h3 class="industry-name">Restaurants</h3>
+        <span class="industry-cta">
+          Learn more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </a>
+      
+      <a href="/salons" class="card card-interactive industry-card">
+        <div class="industry-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="6" cy="6" r="3"/>
+            <path d="M8.12 8.12L12 12"/>
+            <path d="M20 4L8.12 15.88"/>
+            <circle cx="6" cy="18" r="3"/>
+            <path d="M14.8 14.8L20 20"/>
+          </svg>
+        </div>
+        <h3 class="industry-name">Salons</h3>
+        <span class="industry-cta">
+          Learn more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </a>
+      
+      <a href="/auto-repair" class="card card-interactive industry-card">
+        <div class="industry-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3 class="industry-name">Auto Repair</h3>
+        <span class="industry-cta">
+          Learn more
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </a>
+      
+      <a href="/industries" class="card card-interactive industry-card industry-more">
+        <div class="industry-icon industry-icon-more">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="1"/>
+            <circle cx="19" cy="12" r="1"/>
+            <circle cx="5" cy="12" r="1"/>
+          </svg>
+        </div>
+        <h3 class="industry-name">And more</h3>
+        <span class="industry-sub">Dental, veterinary, fitness, hotels...</span>
+        <span class="industry-cta">
+          See all industries
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Compliance Section -->
+<section class="compliance-section bg-cream">
+  <div class="container container-lg">
+    <div class="compliance-content">
+      <div class="compliance-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <div class="compliance-text">
+        <h3>100% compliant with Google's Terms of Service</h3>
+        <p>We encourage authentic reviews. Never incentivized, never gated, never fake. Just real feedback from real customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section bg-dark" id="waitlist">
+  <div class="container container-sm">
+    <div class="cta-content">
+      <h2 class="text-display-md">Turn your happy customers into reviewers</h2>
+      <p>Join the waitlist to get notified when we launch. Early supporters get the best pricing.</p>
+      <form class="email-form">
+        <input type="email" class="email-input" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Join Waitlist</button>
+      </form>
+      <p class="email-hint">No spam. Just launch updates and early access.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="4" r="4" fill="#D97706"/>
+            <path d="M8 28L16 8L24 28H8Z" fill="currentColor"/>
+          </svg>
+          <span>vizzo</span>
+        </a>
+        <p class="footer-tagline">Premium devices that turn happy customers into reviewers.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/features">Features</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="/restaurants">Restaurants</a></li>
+          <li><a href="/salons">Salons</a></li>
+          <li><a href="/auto-repair">Auto Repair</a></li>
+          <li><a href="/industries">All Industries</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 Vizzo. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://twitter.com/vizzo" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/company/vizzo" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/vizzo" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vizzo",
+  "url": "https://vizzo.shop",
+  "logo": "https://vizzo.shop/logo.png",
+  "description": "Premium devices that help local businesses get more Google reviews",
+  "sameAs": [
+    "https://twitter.com/vizzo",
+    "https://linkedin.com/company/vizzo",
+    "https://instagram.com/vizzo"
+  ]
+}
+</script>
+
+</body>
+</html>

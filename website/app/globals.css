@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@source "../components/**/*.tsx";
+@source "../app/**/*.tsx";
+@source "../lib/**/*.ts";
+
+@theme {
+  /* Stone - Dark neutrals */
+  --color-stone-600: #57534E;
+  --color-stone-700: #57534E;
+  --color-stone-800: #44403C;
+  --color-stone-900: #292524;
+  --color-stone-950: #1C1917;
+
+  /* Cream - Light neutrals */
+  --color-cream-50: #FAF9F7;
+  --color-cream-100: #F5F4F0;
+  --color-cream-200: #E8E6E1;
+
+  /* Warm - Muted accent */
+  --color-warm-400: #A39E93;
+
+  /* Amber - Brand accent */
+  --color-amber-400: #F59E0B;
+  --color-amber-500: #D97706;
+  --color-amber-600: #B45309;
+
+  /* Semantic colors */
+  --color-success: #059669;
+  --color-warning: #D97706;
+  --color-error: #DC2626;
+  --color-info: #2563EB;
+
+  /* Font Family */
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Custom Font Sizes */
+  --font-size-display-xl: 4.5rem;
+  --font-size-display-lg: 3.75rem;
+  --font-size-display-md: 3rem;
+  --font-size-heading-xl: 2.25rem;
+  --font-size-heading-lg: 1.875rem;
+  --font-size-heading-md: 1.5rem;
+  --font-size-heading-sm: 1.25rem;
+  --font-size-body-lg: 1.125rem;
+  --font-size-body-md: 1rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-caption: 0.75rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  /* Spacing */
+  --width-18: 4.5rem;
+
+  /* Max Widths */
+  --max-width-container-xs: 32rem;
+  --max-width-container-sm: 40rem;
+  --max-width-container-md: 48rem;
+  --max-width-container-lg: 64rem;
+  --max-width-container-xl: 80rem;
+  --max-width-container-2xl: 90rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    min-width: 320px;
+    background-color: var(--color-cream-50);
+    color: var(--color-stone-950);
+    font-feature-settings: 'ss01' on, 'ss02' on;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid var(--color-amber-500);
+    outline-offset: 2px;
+  }
+
+  :focus {
+    outline: none;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgb(217 119 6 / 0.2);
+    color: var(--color-stone-950);
+  }
+}
+
+@layer components {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Backgrounds */
+  .bg-pattern-dots {
+    background-image: radial-gradient(#E8E6E1 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-pattern-grid {
+    background-image:
+      linear-gradient(#E8E6E1 1px, transparent 1px),
+      linear-gradient(90deg, #E8E6E1 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Gradient Radial */
+  .bg-gradient-radial {
+    background-image: radial-gradient(ellipse, var(--tw-gradient-stops));
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Scroll animation base */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: all 500ms ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
